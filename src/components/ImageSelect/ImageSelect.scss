@@ -1,0 +1,30 @@
+.image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  text-align: center;
+
+  & > img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+
+  & .delete-image {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+  }
+}
+
+.images-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
