@@ -35,7 +35,8 @@ def tree_prediction(tree, img_f):
 
 
 def forest_prediction(sensor_type, img_f):
-    with open(os.path.join('/home/engineer/CRM/hospital-crm-master/backend/SystemBack/Classifiers/GeneticForests', sensor_type + '.json')) as f:
+
+    with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'Classifiers', 'GeneticForests', sensor_type + '.json')) as f:
         forest = json.load(f)
     y_proba = 0
     for obj in forest:
