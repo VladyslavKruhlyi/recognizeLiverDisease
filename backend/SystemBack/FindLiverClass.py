@@ -26,10 +26,10 @@ def tree_prediction(tree, img_f):
                 y_hat = 1
             else:
                 y_hat = 0
-        if np.where((tree['previous_leaf'] == leaf) & (tree['previous_direction']) == y_hat + 1)[0].size > 0:
+        try:
             index = np.where((tree['previous_leaf'] == leaf) & (tree['previous_direction'] == y_hat + 1))[0][0]
             leaf = tree.loc[index]['leaf_number']
-        else:
+        except:
             flag = True
     return y_hat
 
