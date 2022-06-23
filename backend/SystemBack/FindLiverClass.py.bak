@@ -148,9 +148,8 @@ def get_classification_results(parameters):
     # Генетический лес
     gf_prob, gf_class = forest_prediction(sensor_type, img_f)
     gf_result = 'Печень в норме' if gf_class == 0 else 'Печень не в норме'
-    gf_result = gf_result + ' (с вероятностью ' + str(round(gf_prob * 100, 1)) + '%)'
-    
+
     # Пороги трёх наилучших признаков
     mean_signs = get_mean_signs(sensor_type, img_f)
 
-    return {'gf_result': gf_result, 'mean_signs': mean_signs}
+    return {'gf_result': gf_result, 'gf_probability': round(gf_prob * 100, 1), 'mean_signs': mean_signs}
