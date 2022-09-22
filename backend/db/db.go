@@ -10,7 +10,7 @@ import (
 
 // GetDb is a representation of a db
 func GetDb() (*mongo.Client, context.Context) {
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://Nivolves:Danya2000@hospital-crm.drhi5.mongodb.net/hospital-crm"))
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://hospital:inmdr1@localhost:27017/hospital-crm"))
   if err != nil {
     log.Fatal(err)
 	}
